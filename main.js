@@ -36,15 +36,15 @@ const getVenues = async () => {
     url +
     city +
     "&limit=10" +
-    "&" +
+    "&client_id=" +
     clientId +
-    "&" +
+    "&client_secret=" +
     clientSecret +
     "&v=20190207";
   try {
     const response = await fetch(urlToFetch);
     if (response.ok) {
-      console.log("API connection is successfull");
+      console.log(response);
     }
   } catch (error) {
     console.log(error);
