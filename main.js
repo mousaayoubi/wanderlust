@@ -116,8 +116,34 @@ const renderVenues = venues => {
 const renderForecast = days => {
   $weatherDivs.forEach(($day, index) => {
     // Add your code here:
+    const currentDay = days[index];
 
-    let weatherContent = "";
+    var d = currentDay.date;
+    var weekDay = new Array(7);
+    weekDay[0] = "Sunday";
+    weekDay[1] = "Monday";
+    weekDay[2] = "Tuesday";
+    weekDay[3] = "Wedneday";
+    weekDay[4] = "Thursday";
+    weekDay[5] = "Friday";
+    weekDay[6] = "Saturday";
+    weekDay[7] = "Sunday";
+
+    //var n = weekDay[d.getDay()];
+
+    let weatherContent =
+      "<h2> High:" +
+      +currentDay.day.maxtemp_c +
+      "</h2>" +
+      "<h2> Low:" +
+      currentDay.day.mintemp_c +
+      "</h2>" +
+      "<img src=http://" +
+      currentDay.day.condition.icon +
+      ' class="weathericon" />' +
+      "<h2>" +
+      currentDay.date +
+      "</h2>";
     $day.append(weatherContent);
   });
 };
@@ -128,7 +154,7 @@ const executeSearch = () => {
   $destination.empty();
   $container.css("visibility", "visible");
   getVenues().then(venues => renderVenues(venues));
-  getForecast();
+  getForecast().then(days => renderForecast(days));
   return false;
 };
 
