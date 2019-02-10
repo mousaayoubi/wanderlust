@@ -88,9 +88,26 @@ const renderVenues = venues => {
     const venue = venues[index];
 
     const venueIcon = venue.categories[0].icon;
-    console.log(venueIcon);
 
-    let venueContent = "";
+    const venueImgSrc = venueIcon.prefix + "bg_64" + venueIcon.suffix;
+
+    let venueContent =
+      "<h2>" +
+      venue.name +
+      "</h2>" +
+      '<img class="venueimage" src=' +
+      venueImgSrc +
+      ">" +
+      "<h3>Address:</h3>" +
+      "<p>" +
+      venue.location.address +
+      "</p>" +
+      "<p>" +
+      venue.location.city +
+      "</p>" +
+      "<p>" +
+      venue.location.country +
+      "</p>";
     $venue.append(venueContent);
   });
   $destination.append(`<h2>${venues[0].location.city}</h2>`);
@@ -110,7 +127,7 @@ const executeSearch = () => {
   $weatherDivs.forEach(day => day.empty());
   $destination.empty();
   $container.css("visibility", "visible");
-  getVenues();
+  getVenues().then(venues => renderVenues(venues));
   getForecast();
   return false;
 };
