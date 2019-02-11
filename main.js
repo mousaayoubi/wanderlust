@@ -32,15 +32,7 @@ const weekDays = [
 // Add AJAX functions here:
 const getVenues = async () => {
   const city = $input.val();
-  const urlToFetch =
-    url +
-    city +
-    "&limit=10" +
-    "&client_id=" +
-    clientId +
-    "&client_secret=" +
-    clientSecret +
-    "&v=20190207";
+  const urlToFetch = `${url}${city}&limit=10&client_id=${clientId}&client_secret=${clientSecret}&v=20190207`;
   try {
     const response = await fetch(urlToFetch);
     if (response.ok) {
@@ -62,8 +54,8 @@ const getVenues = async () => {
 
 const getForecast = async () => {
   const city = $input.val();
-  const urlToFetch =
-    forecastUrl + "?key=" + apiKey + "&q=" + city + "&days=4" + "&hour=10";
+  const urlToFetch = `${forecastUrl}?key=${apiKey}&q=${city}&days=4&hour=10`;
+  console.log(urlToFetch);
   try {
     const response = await fetch(urlToFetch);
     if (response.ok) {
