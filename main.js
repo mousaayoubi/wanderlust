@@ -117,8 +117,8 @@ const renderForecast = days => {
   $weatherDivs.forEach(($day, index) => {
     // Add your code here:
     const currentDay = days[index];
-    console.log("test");
-    console.log(currentDay);
+
+    const humidity = currentDay.day.avghumidity;
 
     var d = new Date(currentDay.date);
 
@@ -135,18 +135,21 @@ const renderForecast = days => {
     var n = weekDay[d.getDay()];
 
     let weatherContent =
-      "<h2> High:" +
+      "<h2> High: " +
       +currentDay.day.maxtemp_c +
-      "</h2>" +
-      "<h2> Low:" +
+      " C</h2>" +
+      "<h2> Low: " +
       currentDay.day.mintemp_c +
-      "</h2>" +
+      " C</h2>" +
       "<img src=http://" +
       currentDay.day.condition.icon +
       ' class="weathericon" />' +
       "<h2>" +
       n +
-      "</h2>";
+      "</h2>" +
+      "<h2>Humidity: " +
+      humidity +
+      "%</h2";
     $day.append(weatherContent);
   });
 };
