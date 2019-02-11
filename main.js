@@ -117,8 +117,11 @@ const renderForecast = days => {
   $weatherDivs.forEach(($day, index) => {
     // Add your code here:
     const currentDay = days[index];
+    console.log("test");
+    console.log(currentDay);
 
-    var d = currentDay.date;
+    var d = new Date(currentDay.date);
+
     var weekDay = new Array(7);
     weekDay[0] = "Sunday";
     weekDay[1] = "Monday";
@@ -129,7 +132,7 @@ const renderForecast = days => {
     weekDay[6] = "Saturday";
     weekDay[7] = "Sunday";
 
-    //var n = weekDay[d.getDay()];
+    var n = weekDay[d.getDay()];
 
     let weatherContent =
       "<h2> High:" +
@@ -142,7 +145,7 @@ const renderForecast = days => {
       currentDay.day.condition.icon +
       ' class="weathericon" />' +
       "<h2>" +
-      currentDay.date +
+      n +
       "</h2>";
     $day.append(weatherContent);
   });
