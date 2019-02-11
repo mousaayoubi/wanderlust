@@ -103,6 +103,7 @@ const renderVenues = venues => {
 
     $venue.append(venueContent);
   });
+
   $destination.append(`<h2>${venues[0].location.city}</h2>`);
 };
 
