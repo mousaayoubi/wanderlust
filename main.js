@@ -5,7 +5,7 @@ const url = "https://api.foursquare.com/v2/venues/explore?near=";
 
 // APIXU Info
 const apiKey = "7e53027249084f9a8c1104839190702";
-const forecastUrl = "http://api.apixu.com/v1/forecast.json";
+const forecastUrl = "https://api.apixu.com/v1/forecast.json";
 
 // Page Elements
 const $input = $("#city");
