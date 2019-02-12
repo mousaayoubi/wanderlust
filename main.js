@@ -78,7 +78,6 @@ const renderVenues = venues => {
   $venueDivs.forEach(($venue, index) => {
     // Add your code here:
     const venue = venues[index];
-
     const venueIcon = venue.categories[0].icon;
 
     const venueImgSrc = venueIcon.prefix + "bg_64" + venueIcon.suffix;
