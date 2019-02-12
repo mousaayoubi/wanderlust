@@ -79,7 +79,6 @@ const renderVenues = venues => {
     // Add your code here:
     const venue = venues[index];
     const venueIcon = venue.categories[0].icon;
-
     const venueImgSrc = venueIcon.prefix + "bg_64" + venueIcon.suffix;
 
     let venueContent =
