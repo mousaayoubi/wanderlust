@@ -141,7 +141,6 @@ const renderForecast = days => {
       "<h2>Humidity: " +
       humidity +
       "%</h2";
-
     $day.append(weatherContent);
   });
 };
