@@ -109,7 +109,6 @@ const renderForecast = days => {
     // Add your code here:
     const currentDay = days[index];
     const humidity = currentDay.day.avghumidity;
-
     var d = new Date(currentDay.date);
 
     var weekDay = new Array(7);
