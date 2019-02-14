@@ -108,7 +108,6 @@ const renderForecast = days => {
   $weatherDivs.forEach(($day, index) => {
     // Add your code here:
     const currentDay = days[index];
-
     const humidity = currentDay.day.avghumidity;
 
     var d = new Date(currentDay.date);
